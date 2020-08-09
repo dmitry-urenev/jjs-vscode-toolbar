@@ -1,5 +1,7 @@
 import * as vscode from 'vscode';
 
+declare var window: any;
+
 /**
  * called on extension start
  *
@@ -46,15 +48,44 @@ function registerEditorCommand(
     context.subscriptions.push(cmd);
 }
 
+function registerClipboardCommand(
+    context: vscode.ExtensionContext,
+    commandId: string,
+    action: 'cut' | 'copy' | 'paste'
+) {
+    const cmd = vscode.commands.registerTextEditorCommand(commandId, () => {
+
+        const exec = (browserAction: string, apiCommand: string) => {
+            try {
+                vscode.commands.executeCommand(browserAction);
+                vscode.commands.executeCommand(apiCommand);
+            } catch (error) {
+                console.log('Failed with exeption', error);
+            }
+        };
+        
+        if (action === 'copy' || action === 'cut') {
+            const apiCommand = action === 'copy' 
+                ? 'editor.action.clipboardCopyAction' 
+                : 'editor.action.clipboardCutAction';
+            exec(action, apiCommand);
+        } else {
+            exec('paste', 'editor.action.clipboardPasteAction');
+        }
+    });
+
+    context.subscriptions.push(cmd);
+}
+
 /**
  * registers editor related commands
  *
  * @param {vscode.ExtensionContext} context
  */
 function registerEditorCommands(context: vscode.ExtensionContext) {
-    registerEditorCommand(context, 'quickbar.copy', 'editor.action.clipboardCopyAction');
-    registerEditorCommand(context, 'quickbar.cut', 'editor.action.clipboardCutAction');
-    registerEditorCommand(context, 'quickbar.paste', 'editor.action.clipboardPasteAction');
+    registerClipboardCommand(context, 'quickbar.copy', 'copy');
+    registerClipboardCommand(context, 'quickbar.cut', 'cut');
+    registerClipboardCommand(context, 'quickbar.paste', 'paste');
 
     registerEditorCommand(context, 'quickbar.undo', 'undo');
     registerEditorCommand(context, 'quickbar.redo', 'redo');

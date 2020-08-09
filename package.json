@@ -1,9 +1,9 @@
 {
-    "publisher": "jjssoftware",
-    "name": "jjs-vscode-toolbar",
-    "displayName": "jjs-vscode-toolbar",
-    "description": "A VSCode Toolbar",
-    "version": "0.0.3",
+    "publisher": "dmitry-urenev",
+    "name": "quick-vscode-toolbar",
+    "displayName": "quick-toolbar",
+    "description": "A VSCode Toolbar with quick copy-paste, undo-redo actions",
+    "version": "0.0.4",
     "engines": {
         "vscode": "^1.45.0"
     },
@@ -22,8 +22,7 @@
                 "icon": {
                     "dark": "./media/content-copy-light.svg",
                     "light": "./media/content-copy.svg"
-                },
-                "when": "editorHasSelection"
+                }
             },
             {
                 "command": "quickbar.cut",
@@ -32,8 +31,7 @@
                 "icon": {
                     "dark": "./media/content-cut-light.svg",
                     "light": "./media/content-cut.svg"
-                },
-                "when": "editorHasSelection"
+                }
             },
             {
                 "command": "quickbar.paste",
@@ -42,8 +40,7 @@
                 "icon": {
                     "dark": "./media/content-paste-light.svg",
                     "light": "./media/content-paste.svg"
-                },
-                "when": "editorHasSelection"
+                }
             },
             {
                 "command": "quickbar.undo",
@@ -63,7 +60,6 @@
                     "light": "./media/redo.svg"
                 }
             },
-
             {
                 "command": "quickbar.save",
                 "title": "Save",
@@ -87,7 +83,7 @@
                     "light": "./media/arrow_downward.svg",
                     "dark": "./media/arrow_downward_light.svg"
                 }
-            },            
+            },
             {
                 "command": "quickbar.trimWhitespace",
                 "title": "Trim Whitespace",
@@ -95,17 +91,17 @@
             }
         ],
         "menus": {
-            "editor/title": [                
+            "editor/title": [
                 {
-                    "command": "quickbar.copy",                    
+                    "command": "quickbar.copy",
                     "group": "navigation@1"
-                },
+                },                
                 {
-                    "command": "quickbar.cut",                    
+                    "command": "quickbar.cut",
                     "group": "navigation@2"
                 },
                 {
-                    "command": "quickbar.paste",                    
+                    "command": "quickbar.paste",
                     "group": "navigation@3"
                 },
                 {
@@ -122,9 +118,9 @@
                     "command": "quickbar.save",
                     "alt": "quickbar.save",
                     "group": "navigation@6"
-                }                
+                }
             ],
-            "editor/context": [                                
+            "editor/context": [
                 {
                     "command": "quickbar.upperCase",
                     "group": "Group4@1"
@@ -132,7 +128,7 @@
                 {
                     "command": "quickbar.lowerCase",
                     "group": "Group4@2"
-                },                                
+                },
                 {
                     "command": "quickbar.trimWhitespace",
                     "group": "Group4@3"
@@ -147,24 +143,26 @@
         "lint": "eslint src --ext ts",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile && npm run lint",
-        "test": "node ./out/test/runTest.js"
+        "test": "node ./out/test/runTest.js",
+        "package": "vsce package"
     },
     "devDependencies": {
-        "@types/vscode": "^1.45.0",
         "@types/glob": "^7.1.1",
         "@types/mocha": "^7.0.2",
         "@types/node": "^13.11.0",
-        "eslint": "^6.8.0",
-        "@typescript-eslint/parser": "^2.30.0",
+        "@types/vscode": "^1.45.0",
         "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "eslint": "^6.8.0",
         "glob": "^7.1.6",
         "mocha": "^7.1.2",
         "typescript": "^3.8.3",
-        "vscode-test": "^1.3.0"
+        "vscode-test": "^1.3.0",
+        "vsce": "^1.77.0"
     },
-    "homepage": "https://github.com/jjssoftware/jjs-vscode-toolbar",
+    "homepage": "https://github.com/dmitry-urenev/jjs-vscode-toolbar",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jjssoftware/jjs-vscode-toolbar"
+        "url": "https://github.com/dmitry-urenev/jjs-vscode-toolbar"
     }
 }
