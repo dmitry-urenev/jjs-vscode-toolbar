@@ -16,268 +16,126 @@
     "contributes": {
         "commands": [
             {
-                "command": "jjstoolbar.newFile",
-                "title": "New File",
-                "category": "JJSToolbarCommands",
+                "command": "quickbar.copy",
+                "title": "Copy",
+                "category": "QuickToolbarCommands",
                 "icon": {
-                    "light": "./media/newfile-black.png",
-                    "dark": "./media/newfile-white.png"
-                }
+                    "dark": "./media/content-copy-light.svg",
+                    "light": "./media/content-copy.svg"
+                },
+                "when": "editorHasSelection"
             },
             {
-                "command": "jjstoolbar.openFile",
-                "title": "Open File...",
-                "category": "JJSToolbarCommands",
+                "command": "quickbar.cut",
+                "title": "Cut",
+                "category": "QuickToolbarCommands",
                 "icon": {
-                    "light": "./media/newfolder-black.png",
-                    "dark": "./media/newfolder-white.png"
-                }
+                    "dark": "./media/content-cut-light.svg",
+                    "light": "./media/content-cut.svg"
+                },
+                "when": "editorHasSelection"
             },
             {
-                "command": "jjstoolbar.save",
-                "title": "Save",
-                "category": "JJSToolbarCommands",
+                "command": "quickbar.paste",
+                "title": "Paste",
+                "category": "QuickToolbarCommands",
                 "icon": {
-                    "light": "./media/save-black.png",
-                    "dark": "./media/save-white.png"
-                }
+                    "dark": "./media/content-paste-light.svg",
+                    "light": "./media/content-paste.svg"
+                },
+                "when": "editorHasSelection"
             },
             {
-                "command": "jjstoolbar.saveAll",
-                "title": "Save All",
-                "category": "JJSToolbarCommands",
-                "icon": {
-                    "light": "./media/saveall-black.png",
-                    "dark": "./media/saveall-white.png"
-                }
-            },
-            {
-                "command": "jjstoolbar.close",
-                "title": "Close",
-                "category": "JJSToolbarCommands"
-            },
-            {
-                "command": "jjstoolbar.closeAll",
-                "title": "Close All",
-                "category": "JJSToolbarCommands",
-                "icon": {
-                    "light": "./media/closeall-black.png",
-                    "dark": "./media/closeall-white.png"
-                }
-            },
-            {
-                "command": "jjstoolbar.undo",
+                "command": "quickbar.undo",
                 "title": "Undo",
-                "category": "JJSToolbarCommands",
+                "category": "QuickToolbarCommands",
                 "icon": {
-                    "light": "./media/undo-black.png",
-                    "dark": "./media/undo-white.png"
+                    "dark": "./media/undo-light.svg",
+                    "light": "./media/undo.svg"
                 }
             },
             {
-                "command": "jjstoolbar.redo",
+                "command": "quickbar.redo",
                 "title": "Redo",
-                "category": "JJSToolbarCommands",
+                "category": "QuickToolbarCommands",
                 "icon": {
-                    "light": "./media/redo-black.png",
-                    "dark": "./media/redo-white.png"
+                    "dark": "./media/redo-light.svg",
+                    "light": "./media/redo.svg"
                 }
             },
+
             {
-                "command": "jjstoolbar.wordwrap",
-                "title": "Wordwrap",
-                "category": "JJSToolbarCommands",
-                "icon": {
-                    "light": "./media/wordwrap-black.png",
-                    "dark": "./media/wordwrap-white.png"
-                }
+                "command": "quickbar.save",
+                "title": "Save",
+                "category": "QuickToolbarCommands",
+                "icon": "$(save)"
             },
             {
-                "command": "jjstoolbar.lineComment",
-                "title": "Line Comment",
-                "category": "JJSToolbarCommands",
-                "icon": {
-                    "light": "./media/sidebar-black.png",
-                    "dark": "./media/sidebar-white.png"
-                }
-            },
-            {
-                "command": "jjstoolbar.blockComment",
-                "title": "Block Comment",
-                "category": "JJSToolbarCommands",
-                "icon": {
-                    "light": "./media/sidebar-black.png",
-                    "dark": "./media/sidebar-white.png"
-                }
-            },
-            {
-                "command": "jjstoolbar.saveAs",
-                "title": "Save As",
-                "category": "JJSToolbarCommands"
-            },
-            {
-                "command": "jjstoolbar.upperCase",
+                "command": "quickbar.upperCase",
                 "title": "Uppercase",
-                "category": "JJSToolbarCommands",
+                "category": "QuickToolbarCommands",
                 "icon": {
                     "light": "./media/arrow_upward.svg",
                     "dark": "./media/arrow_upward_light.svg"
                 }
             },
             {
-                "command": "jjstoolbar.lowerCase",
+                "command": "quickbar.lowerCase",
                 "title": "Lowercase",
-                "category": "JJSToolbarCommands",
+                "category": "QuickToolbarCommands",
                 "icon": {
                     "light": "./media/arrow_downward.svg",
                     "dark": "./media/arrow_downward_light.svg"
                 }
-            },
+            },            
             {
-                "command": "jjstoolbar.prettifyJson",
-                "title": "Prettify Json",
-                "category": "JJSToolbarCommands"
-            },
-            {
-                "command": "jjstoolbar.formatXml",
-                "title": "Format XML",
-                "category": "JJSToolbarCommands"
-            },
-            {
-                "command": "jjstoolbar.tabsToSpaces",
-                "title": "Tabs to Spaces",
-                "category": "JJSToolbarCommands"
-            },
-            {
-                "command": "jjstoolbar.trimWhitespace",
+                "command": "quickbar.trimWhitespace",
                 "title": "Trim Whitespace",
-                "category": "JJSToolbarCommands"
-            },
-            {
-                "command": "jjstoolbar.languageMode",
-                "title": "Language Mode",
-                "category": "JJSToolbarCommands"
+                "category": "QuickToolbarCommands"
             }
         ],
         "menus": {
-            "editor/title": [
+            "editor/title": [                
                 {
-                    "command": "jjstoolbar.newFile",
-                    "alt": "jjstoolbar.newFile",
+                    "command": "quickbar.copy",                    
                     "group": "navigation@1"
                 },
                 {
-                    "command": "jjstoolbar.openFile",
-                    "alt": "jjstoolbar.openFile",
+                    "command": "quickbar.cut",                    
                     "group": "navigation@2"
                 },
                 {
-                    "command": "jjstoolbar.save",
-                    "alt": "jjstoolbar.save",
+                    "command": "quickbar.paste",                    
                     "group": "navigation@3"
                 },
                 {
-                    "command": "jjstoolbar.saveAll",
-                    "alt": "jjstoolbar.saveAll",
+                    "command": "quickbar.undo",
+                    "alt": "quickbar.undo",
                     "group": "navigation@4"
                 },
                 {
-                    "command": "jjstoolbar.undo",
-                    "alt": "jjstoolbar.undo",
+                    "command": "quickbar.redo",
+                    "alt": "quickbar.redo",
                     "group": "navigation@5"
                 },
                 {
-                    "command": "jjstoolbar.redo",
-                    "alt": "jjstoolbar.redo",
+                    "command": "quickbar.save",
+                    "alt": "quickbar.save",
                     "group": "navigation@6"
-                },
-                {
-                    "command": "jjstoolbar.closeAll",
-                    "alt": "jjstoolbar.closeAll",
-                    "group": "navigation@7"
-                },
-                {
-                    "command": "jjstoolbar.wordwrap",
-                    "alt": "jjstoolbar.wordwrap",
-                    "group": "navigation@8"
-                },
-                {
-                    "command": "jjstoolbar.upperCase",
-                    "alt": "jjstoolbar.upperCase",
-                    "group": "navigation@9"
-                },
-                {
-                    "command": "jjstoolbar.lowerCase",
-                    "alt": "jjstoolbar.lowerCase",
-                    "group": "navigation@10"
-                }
+                }                
             ],
-            "editor/context": [
+            "editor/context": [                                
                 {
-                    "command": "jjstoolbar.newFile",
-                    "group": "Group1@1"
-                },
-                {
-                    "command": "jjstoolbar.openFile",
-                    "group": "Group1@2"
-                },
-                {
-                    "command": "jjstoolbar.save",
-                    "group": "Group1@3"
-                },
-                {
-                    "command": "jjstoolbar.saveAs",
-                    "group": "Group1@4"
-                },
-                {
-                    "command": "jjstoolbar.saveAll",
-                    "group": "Group1@5"
-                },
-                {
-                    "command": "jjstoolbar.close",
-                    "group": "Group2@1"
-                },
-                {
-                    "command": "jjstoolbar.closeAll",
-                    "group": "Group2@2"
-                },
-                {
-                    "command": "jjstoolbar.lineComment",
-                    "group": "Group3@1"
-                },
-                {
-                    "command": "jjstoolbar.blockComment",
-                    "group": "Group3@2"
-                },
-                {
-                    "command": "jjstoolbar.upperCase",
+                    "command": "quickbar.upperCase",
                     "group": "Group4@1"
                 },
                 {
-                    "command": "jjstoolbar.lowerCase",
+                    "command": "quickbar.lowerCase",
                     "group": "Group4@2"
-                },
+                },                                
                 {
-                    "command": "jjstoolbar.prettifyJson",
-                    "group": "Group5@1",
-                    "when": "editorLangId == json"
-                },
-                {
-                    "command": "jjstoolbar.formatXml",
-                    "group": "Group5@2",
-                    "when": "editorLangId == xml"
-                },
-                {
-                    "command": "jjstoolbar.tabsToSpaces",
-                    "group": "Group5@3"
-                },
-                {
-                    "command": "jjstoolbar.trimWhitespace",
-                    "group": "Group5@4"
-                },
-                {
-                    "command": "jjstoolbar.languageMode",
-                    "group": "Group5@5"
+                    "command": "quickbar.trimWhitespace",
+                    "group": "Group4@3"
                 }
             ]
         }
